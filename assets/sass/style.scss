@@ -41,7 +41,7 @@ $gradient: linear-gradient(to right, $primary-color, $secondary-color);
 
 body {
   font-size: 1.6rem;
-  font-family: "Poppins", sans-serif;
+  // font-family: "Poppins", sans-serif;
   font-weight: normal;
   /* background-color: $body-color; */
   // position: relative;
@@ -72,13 +72,45 @@ li {
   list-style-type: none;
 }
 
+.ptb--120 {
+  padding: 12rem 0;
+}
+
+.pb--50 {
+  padding-bottom: 5rem;
+}
+
+.mb--30 {
+  margin-bottom: 3rem;
+}
+
+.bg_color--1 {
+  background-color: #ffffff;
+}
+
+.bg__image--3 {
+  background-image: url(../img/bg-image-3.jpg) !important;
+}
+
+.bg_image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 .header {
   padding: 0 5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
 
   & .header__container {
     padding: 3rem 0;
     @include flexbox(center, space-between, row, wrap);
-    background-color: violet;
+    // background-color: gray;
   }
 
   & .header__left {
@@ -97,17 +129,71 @@ li {
         margin-left: 0;
       }
 
+      // Menu-dropdown lấy thẻ li chung
       & li {
         margin: 0 1.5rem;
-        position: relative;
+        position: relative; // thẻ cha chứa các submenu
 
         & a {
-          color: black;
+          color: white;
           font-size: 1.6rem;
           font-weight: 500;
           padding: 20px 0;
           display: inline-block;
           text-decoration: none;
+          transition: all 0.3s ease;
+        }
+        // hover vào menu dropdown
+        &:hover {
+          cursor: pointer;
+          & a {
+            color: $primary-color;
+          }
+        }
+      }
+
+      // hover menu-dropdown
+      & .menu-dropdown:hover {
+        & .submenu {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      & ul.submenu {
+        min-width: 240px;
+        height: auto;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        background-color: #fff;
+        box-shadow: 0 0 35px rgb(0 0 0 / 10%);
+        text-align: left;
+        padding: 12px 0;
+        border-radius: 4px;
+
+        & li:first-child {
+          max-width: 21rem;
+          margin-left: 1.4rem;
+        }
+
+        & li a {
+          font-weight: 500;
+          padding: 5px 15px;
+          font-size: 14px;
+          display: block;
+          color: #1f1f25;
+          margin: 0 3px;
+          border-radius: 3px;
+          width: 100%;
+        }
+
+        & a:hover {
+          color: $primary-color;
+          background-color: rgba($primary-color, 0.1);
         }
       }
     }
@@ -117,7 +203,8 @@ li {
 
       & .btn-default {
         display: inline-block;
-        color: black;
+        color: $white-color;
+        background-color: transparent;
         font-size: 1.6rem;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -126,7 +213,7 @@ li {
         border-radius: 50rem;
         font-weight: 500;
         transition: all 0.4s ease-in-out;
-        border: 2px solid #ccc;
+        border: 2px solid #ffffff33;
 
         &:hover {
           background-color: $primary-color;
@@ -135,4 +222,174 @@ li {
       }
     }
   }
+}
+
+.slider {
+  & ol.carousel-indicators {
+    margin-bottom: 5.5rem;
+
+    & li {
+      @include size(0.9rem);
+      border-radius: 50%;
+      // box-shadow: inset 0 0 0 5px white;
+      margin: 0 0.9rem;
+      background-color: #999;
+
+      // &::after {
+      //   background: #888;
+      //   box-shadow: inset 0 0 0 5px #999;
+      // }
+    }
+
+    & .active {
+      box-shadow: inset 0 0 0 1px $primary-color;
+      animation: 600ms ease-in-out 0s normal none 1 running fadeInOut;
+    }
+  }
+
+  & .carousel-caption {
+    @include flexbox(center, center, column, nowrap);
+    bottom: 50%;
+    transform: translateY(50%);
+
+    & p.carousel-desc {
+      font-size: 2.8rem;
+      line-height: 4rem;
+      margin: 0;
+      padding: 0 8rem;
+      font-weight: 300;
+      animation: 1000ms ease-in-out 0s normal none 1 running fadeInUp;
+    }
+
+    & h1.carousel-title {
+      font-size: 10rem;
+      font-weight: 900;
+      margin: 16.5rem 0 2rem;
+      animation: 800ms ease-in-out 0s normal none 1 running fadeInUp;
+    }
+  }
+
+  & .carousel-item {
+    height: 72rem;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &::after {
+      content: "";
+      @include size(100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  & .carousel-item-1 {
+    background-image: url(../img/bg-image-22.jpg);
+  }
+  & .carousel-item-2 {
+    background-image: url(../img/bg-image-23.jpg);
+  }
+  & .carousel-item-3 {
+    background-image: url(../img/bg-image-24.jpg);
+  }
+  & .carousel-item-4 {
+    background-image: url(../img/bg-image-20.jpg);
+  }
+
+  & .carousel-btn {
+    margin: 6.2rem 0 9.1rem;
+    animation: 1200ms ease-in-out 0s normal none 1 running fadeInUp;
+    & .btn-slider {
+      display: inline-block;
+      color: $white-color;
+      background-color: $primary-color;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.6rem 4rem;
+      border-radius: 50rem;
+      font-weight: 500;
+      transition: all 0.4s ease-in-out;
+      border: 2px solid transparent;
+
+      &:hover {
+        color: $primary-color;
+        background-color: transparent;
+        border-color: $primary-color;
+      }
+    }
+  }
+}
+
+.service {
+}
+
+.project {
+}
+
+.about {
+}
+
+.character {
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInOut {
+  from {
+    // box-shadow: inset 0 0 0 5px $primary-color;
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+    // border: 1px solid $primary-color;
+  }
+}
+
+@include maxWidth(1200px) {
+}
+
+@include maxWidth(992px) {
+}
+
+// Reponsive trên mobile
+@include maxWidth(767px) {
+  .header {
+    padding: 0 1.5rem;
+
+    & .header__left {
+      & .header__logo img {
+        max-height: 4rem;
+      }
+    }
+    & .header__right {
+      margin-left: auto;
+      & .header-btn {
+        & .btn-default {
+          font-size: 14px;
+          letter-spacing: 0;
+          padding: 7px 16px;
+        }
+      }
+
+      & .humberger-menu {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+@include maxWidth(576px) {
 }
