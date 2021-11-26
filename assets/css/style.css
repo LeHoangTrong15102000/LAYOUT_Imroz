@@ -59,6 +59,14 @@ li {
   background: #f6f6f6;
 }
 
+.mt--60 {
+  margin-top: 6rem !important;
+}
+
+.mt--40 {
+  margin-top: 4rem !important;
+}
+
 .bg_image {
   background-repeat: no-repeat;
   background-size: cover;
@@ -175,6 +183,7 @@ li {
   font-weight: 500;
   transition: all 0.4s ease-in-out;
   border: 2px solid #ffffff33;
+  cursor: pointer;
 }
 .header .header__right .header-btn .btn-default:hover {
   background-color: #fd4766;
@@ -185,16 +194,19 @@ li {
   margin-bottom: 5.5rem;
 }
 .slider ol.carousel-indicators li {
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 0.5rem;
+  height: 0.4rem;
   border-radius: 50%;
   margin: 0 0.9rem;
-  background-color: #999;
-  cursor: default;
+  opacity: 0.35;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .slider ol.carousel-indicators .active {
   box-shadow: inset 0 0 0 1px #fd4766;
-  animation: 600ms ease-in-out 0s normal none 1 running fadeInOut;
+  transform: scale(2.5);
+  opacity: 1;
+  background-color: transparent;
 }
 .slider .carousel-caption {
   display: flex;
@@ -265,11 +277,76 @@ li {
   font-weight: 500;
   transition: all 0.4s ease-in-out;
   border: 2px solid transparent;
+  cursor: pointer;
 }
 .slider .carousel-btn .btn-slider:hover {
   color: #fd4766;
   background-color: transparent;
   border-color: #fd4766;
+}
+.slider .slick-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: 0.5s;
+  opacity: 1;
+  width: 6.2rem;
+  height: 6.2rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+}
+.slider .carousel-control-prev {
+  left: 5rem;
+}
+.slider .carousel-control-prev:hover {
+  left: 3rem;
+  background-color: #fd4766;
+  border-color: #fd4766;
+}
+.slider .carousel-control-prev:hover::before {
+  opacity: 1;
+}
+.slider .carousel-control-prev::before {
+  content: url(../img/slick-arrow-left-small.png);
+  line-height: 1;
+  opacity: 0.4;
+  position: relative;
+  top: 2px;
+  transition: 0.5s;
+  z-index: 2;
+}
+.slider .carousel-control-next {
+  left: auto;
+  right: 5rem;
+}
+.slider .carousel-control-next:hover {
+  right: 3rem;
+  background-color: #fd4766;
+  border-color: #fd4766;
+}
+.slider .carousel-control-next:hover::before {
+  opacity: 1;
+}
+.slider .carousel-control-next::before {
+  content: url(../img/slick-arrow-right-small.png);
+  line-height: 1;
+  opacity: 0.4;
+  position: relative;
+  top: 2px;
+  transition: 0.5s;
+  z-index: 2;
+}
+.slider .carousel-control-prev-icon {
+  display: none;
+}
+.slider .carousel-control-next-icon {
+  display: none;
 }
 
 .service .service__subtitle {
@@ -455,6 +532,24 @@ li {
   padding: 0 17rem;
   font-weight: 300;
   color: #717173;
+}
+.portfolio footer .portfolio-btn-default {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1.6rem 3rem;
+  border-radius: 50rem;
+  display: inline-block;
+  font-weight: 500;
+  transition: all 0.4s ease-in-out;
+  background: #fd4766;
+  border: 2px solid #fd4766;
+}
+.portfolio footer .portfolio-btn-default:hover {
+  color: #fd4766;
+  background: transparent;
 }
 
 .blog .blog__subtitle {

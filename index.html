@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head>  
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Imroz</title>
+    <title>Digital Agency</title>
     <link
       rel="shortcut icon"
       href="./assets/img/favicon.png"
@@ -318,6 +318,14 @@
               </div>
             </div>
           </div>
+          <a class="carousel-control-prev slick-arrow" href="#carouselExampleCaptions" role="button" data-slide="prev" styles="display: block;">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next slick-arrow" href="#carouselExampleCaptions" role="button" data-slide="next" styles="display: block;">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
     </section>  
@@ -491,6 +499,7 @@
     <!--Our Projects-->
     <section id="portfolio" class="portfolio ptb--120 bg_image bg_image--3">
       <div class="container">
+        <!--header Portfolio-->
         <header>
           <div class="row">
             <div class="col-12">
@@ -504,16 +513,36 @@
             </div>
           </div>
         </header>
-
+        
+        <!--Main Portfolio-->
         <main>
-          <div class="row">
-            <div class="col-12"></div>
+          <div class="row portfolio__main">
+            <!--item Portfolio-->
+            <div class="portfolio__item col-12 col-sm-6 col-md-6 col-lg-4">
+              <!--Nội dụng chính Main Item-->
+              <div class="portfolio__main-item text-center mt--40">
+                <!--thumbnail-->
+                <div class="portfolio__thumbnail"></div>
+                <!--content-->
+                <div class="portfolio__content"></div>
+                
+                <!--Link transparent-->
+                <a href="index.html" class="portfolio-transparent-link"></a>
+              </div>
+            </div>
+            <!--End Item portfolio-->
           </div>
         </main>
 
         <footer>
           <div class="row">
-            <div class="col-12"></div>
+            <div class="col-12">
+                <div class="view-btn mt--60 text-center">
+                  <a href="index.html" class="portfolio-btn-default">
+                    <span>View Projects</span>
+                  </a>
+                </div>
+            </div>
           </div>
         </footer>
       </div>
