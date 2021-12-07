@@ -88,6 +88,10 @@ li {
   padding: 12rem 0;
 }
 
+.ptb--70 {
+  padding: 7rem 0;
+}
+
 // .pt--120 {
 //   padding-top: 12rem;
 // }
@@ -1397,6 +1401,191 @@ li {
 }
 
 .footer {
+  & .footer__separator {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: rgba(255, 255, 255, 1);
+      opacity: 0.15;
+      max-width: 110.5rem;
+      margin: 0 auto;
+      height: 1px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    & .footer__inner {
+      & h2 {
+        font-size: 3.3rem;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+    }
+
+    & .offset-xl-2 {
+      margin-left: 16.666667%;
+    }
+
+    & .text-lg-right {
+    }
+
+    & a.footer__btn-default {
+      border: 2px solid #ffffff33;
+      color: #fff;
+      background-color: #00000000;
+      text-decoration: none;
+      padding: 2.5rem 5.5rem;
+      border-radius: 5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+        background-color: $primary-color;
+        border-color: $primary-color;
+      }
+    }
+  }
+
+  & .footer__wrapper {
+    position: relative;
+
+    & .footer__copyright {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      height: 22rem;
+
+      & p {
+        color: #757575;
+        font-size: 1.5rem;
+        line-height: 3rem;
+        letter-spacing: 1px;
+
+        & a {
+          color: #757575;
+          text-decoration: none;
+          position: relative;
+          transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+          transition: width 0.25s linear;
+
+          &:hover {
+            color: $primary-color;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 1.3px;
+            transition: width 0.25s linear;
+            background: linear-gradient(
+              120deg,
+              #1c99fe 20.69%,
+              #7644ff 50.19%,
+              $primary-color 79.69%
+            );
+          }
+        }
+
+        & a:hover {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    & .footer__logo {
+      margin-bottom: 3rem;
+
+      & img {
+        max-height: 6rem;
+        max-width: 100%;
+      }
+    }
+
+    & .footer__content {
+      & .footer__text {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        font-weight: 500;
+        color: white;
+      }
+
+      & ul.footer__link {
+        & li {
+          color: #757575;
+          font-size: 1.6rem;
+          line-height: 2;
+          cursor: pointer;
+
+          & a {
+            text-decoration: none;
+            color: #757575;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transition: width 0.25s linear;
+
+            &:hover {
+              color: $primary-color;
+            }
+
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              width: 0;
+              height: 1.3px;
+              transition: width 0.25s linear;
+              background: linear-gradient(
+                120deg,
+                #1c99fe 20.69%,
+                #7644ff 50.19%,
+                $primary-color 79.69%
+              );
+            }
+          }
+
+          & a:hover {
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      & ul.footer_social {
+        margin-top: 2rem;
+
+        & li {
+          margin: 6px;
+        }
+
+        & a {
+          text-decoration: none;
+          color: black;
+          width: 3rem;
+          height: auto;
+          text-align: left;
+          line-height: inherit;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+
+  & .offset-xl-1 {
+    margin-left: 8.333333%;
+  }
 }
 
 .rn-progress-parent {
